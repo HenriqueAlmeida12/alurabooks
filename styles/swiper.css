@@ -1,0 +1,88 @@
+.swiper-title{
+    display: flex;
+    color: var(--primary-yellow);
+    background-color: var(--primary-white);
+    justify-content: center;
+    align-items: flex-end;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    font-weight: 700;
+    height: 55px;
+    padding-bottom: 8px;
+}
+.swiper-slide img{
+    width: 100%;
+}
+.swiper-button-next, .swiper-button-prev {
+    display: none !important;
+}
+.swiper-pagination{
+    position: 0;
+    color: red;
+    margin: 10px 0 12px 0;
+}
+.swiper-pagination, .swiper-pagination-bullets, .swiper-pagination-horizontal{
+    position: initial !important;
+}
+.swiper-pagination-bullet {
+    --swiper-pagination-color: var(--linear-gradient-blue);
+}
+.swiper-scrollbar{
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .swiper-title{
+        height: 106px;
+        font-size: 1.625rem;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        display: block !important;
+    }
+    .swiper-slide img{
+        height: 256px;
+    }
+    .swiper-3d, .swiper-slide-shadow-left, .swiper-slide-shadow-right  {
+        background-image: none !important;
+    }
+    .swiper-slide, .swiper-slide-visible, .swiper-slide-fully-visible, .swiper-slide-active{
+        transform: none !important;
+    }
+    .swiper-button-next , .swiper-button-prev{
+        content: 'next';
+        top: 55% !important;
+        display: flex !important;
+        height: 50px !important;
+        width: 50px !important;
+        background: var(--linear-gradient-blue);
+        border-radius: 50%;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
+    }
+    .swiper-button-next{
+        right: 4% !important;
+    }
+    .swiper-button-prev{
+        left: 4% !important;
+    }
+    .swiper-button-next:after, .swiper-button-prev:after{
+        color: var(--primary-white) !important;
+        font-size: small !important;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .swiper-box {
+        margin: 5% 0;
+        display: inline-flex;
+        width: 100%;
+        justify-content: center;
+        gap: 2%;
+    }
+    .swiper-section{
+        width: 50%;
+    }
+    .swiper-pagination-bullet {
+        width: 12px !important;
+        height: 12px !important;
+    }
+}

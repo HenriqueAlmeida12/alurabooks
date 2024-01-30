@@ -1,0 +1,192 @@
+header{
+    background-color: var(--primary-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.header-container{
+    display: flex;
+    align-items: center;
+}
+#header-container-mid{
+    justify-content: center;
+}
+.header-container-mid__itens, .header-container-mid__label{
+    width: fit-content;
+    padding: 12px 25px 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--primary-black);
+    font-weight: 400;
+    display: none;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+}
+.header-container img{
+    padding: 0 12px;
+}
+.header-container__logo{
+    text-decoration: none;
+    color: var(--primary-black  );
+    font-family: var(--logo-font);
+    font-weight: 400;
+    font-size: 30px;
+    display: none;
+    align-items: flex-end;
+    gap: 11px;
+    width: min-content;
+    margin-right: 3.3%;
+}
+.header-container__logo strong{
+    font-weight: 700;
+}
+.header-container__button{
+    display: none;
+}
+.header-container__button:checked~.header-list{
+    display: block;
+    position: absolute;
+    top: 100%;
+}
+.header-container__button:checked~.header-container__button{
+    background-color: var(--linear-gradient-blue);
+}
+.header-menu__label{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-menu__hamburger {
+    background-image: url("../assets/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    width: 36px;
+    height: 24px;
+}
+.header-container__button:checked ~.header-menu__label{
+    background: var(--linear-gradient-blue);
+}
+.header-container__button:checked ~ .header-container-mid__label{
+    background: var(--linear-gradient-blue);
+}
+.header-container__button::-moz-focus-outer ~ .header-container-mid__label{
+    background-color: var(--primary-white);
+}
+.header-container-mid__label{
+    width: 112px;
+}
+#compras, #usuario {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--primary-black);
+    white-space: nowrap;
+}
+#compras p, #usuario p{
+    display: none;
+}
+#header-container-right{
+    align-items: flex-start;
+}
+.header-container__button:checked ~ .header-menu__label span{
+    background-image: url("../assets/MenuAberto.svg");
+}
+.header-list{
+    display: none;
+    background-color: var(--primary-white);
+    width: 60vw;
+    padding: 0;
+    z-index: 2;
+    box-shadow: 0px 8px 8px 0px #00000040;
+}
+.header-list li{
+    padding: 1em;
+    list-style: none;
+}
+.header-list__title{
+    color: var(--primary-yellow);
+    font-weight: 700;
+    font-size: 1rem;
+}
+.header-list__item{
+    background: var(--linear-gradient-blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+}
+.header-list__item:hover{
+    background: var(--linear-gradient-blue);
+}
+.header-list__item:hover > .header-list__item-link{
+    background: var(--primary-white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 1024px) {
+    header{
+        padding: 18px 60px;
+    }
+    .header-container__logo{
+        display: inline-block;
+    }
+    .header-menu__label{
+        display: none;
+    }
+    #favoritos{
+        display: none;
+    }
+    #header-container-right{
+        gap: 61px;
+    }
+    .header-container-mid__itens, .header-container-mid__label{
+        display: inline-block;
+    }
+    .header-list{
+        width: fit-content;
+        top: 72%;
+        position: absolute;
+    }
+    .header-container__button:checked~.header-list{
+        top: 72%;
+    }
+    .header-container-mid__itens:hover {
+        background: var(--linear-gradient-blue);
+        color: var(--primary-white)
+    }
+    .header-container__button:checked~.header-container-mid__label{
+        color: var(--primary-white);
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .header-container__button:hover~.header-container-mid__label{
+        background: var(--linear-gradient-blue);
+        color: var(--primary-white);
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (min-width: 1400px) {
+    #compras p, #usuario p{
+        display: inline-flex;
+    }
+    #header-container-mid{
+        justify-content: flex-start;
+        width: 60%;
+        padding-left: 2%;
+    }
+}
